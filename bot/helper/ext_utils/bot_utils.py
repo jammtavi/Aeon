@@ -157,7 +157,7 @@ def source(self):
 
 
 def get_readable_message():
-    msg = '<b>Powered by Aeon</b>\n\n'
+    msg = '<a href=https://telegram.me/zenupdatess>Pᴏᴡᴇʀᴇᴅ Bʏ Zᴇɴ Uᴘᴅᴀᴛᴇs</a>\n\n'
     button = None
     tasks = len(download_dict)
     currentTime = get_readable_time(time() - botStartTime)
