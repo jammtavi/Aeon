@@ -65,7 +65,7 @@ async def stats(_, message):
         if v == '':
             v = '∞'
         elif k != 'User task':
-            v = f'{v}GB/Link'
+            v = f'{v} Task/Link'
         else:
             v = f'{v} Tasks/user'
         limitations += f'<code>• {k:<11}:</code> {v}\n'
