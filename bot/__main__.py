@@ -50,7 +50,7 @@ async def stats(_, message):
         'Clone'    : config_dict.get('CLONE_LIMIT',    '∞'),
         'Mega'     : config_dict.get('MEGA_LIMIT',     '∞'),
         'User task': config_dict.get('USER_MAX_TASKS', '∞')}
-    system_info = f'<b>{quote}</b>\n\n'\
+    system_info = f'<a href=https://telegram.me/zenupdatess>Pᴏᴡᴇʀᴇᴅ Bʏ Zᴇɴ Uᴘᴅᴀᴛᴇs</a>\n\n'\
         f'<code>• Bot uptime :</code> {currentTime}\n'\
         f'<code>• Sys uptime :</code> {osUptime}\n'\
         f'<code>• CPU usage  :</code> {cpuUsage}%\n'\
@@ -65,7 +65,7 @@ async def stats(_, message):
         if v == '':
             v = '∞'
         elif k != 'User task':
-            v = f'{v} Task/Link'
+            v = f'{v} Gb/Link'
         else:
             v = f'{v} Tasks/user'
         limitations += f'<code>• {k:<11}:</code> {v}\n'
