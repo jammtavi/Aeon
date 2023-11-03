@@ -16,35 +16,35 @@ def isNSFWdata(data):
             if isinstance(item, dict):
                 for key, value in item.items():
                     if isinstance(value, str) and isNSFW(value):
-                        return True
+                        return False
             elif 'name' in item and isinstance(item['name'], str) and isNSFW(item['name']):
-                return True
+                return False
     elif isinstance(data, dict) and 'contents' in data:
         contents = data['contents']
         for item in contents:
             if 'filename' in item:
                 filename = item['filename']
                 if isNSFW(filename):
-                    return True
+                    return False
     return False
 
 
 async def nsfw_precheck(message):
     if isNSFW(message.text):
-        return True
+        return False
     elif reply_to := message.reply_to_message:
         if reply_to.caption:
             if isNSFW(reply_to.caption):
-                return True
+                return False
         if reply_to.document:
             if isNSFW(reply_to.document.file_name):
-                return True
+                return False
         if reply_to.video:
             if isNSFW(reply_to.video.file_name):
-                return True
+                return False
         if reply_to.text:
             if isNSFW(reply_to.text):
-                return True
+                return False
     return False
 
 
